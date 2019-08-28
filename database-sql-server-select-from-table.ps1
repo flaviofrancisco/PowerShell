@@ -1,10 +1,10 @@
-$instance = 'Your instance'
+$instance = 'Your instance name...'
 
-$database_name = 'Your database name'
+$database_name = 'Your database name...'
 
-$serverInstance = New-Object ('Microsoft.SqlServer.Management.Smo.Server') "{$instance}"
+$serverInstance = New-Object ('Microsoft.SqlServer.Management.Smo.Server') $instance
 
-$db = $serverInstance.Databases['{$database_name}']
+$db = $serverInstance.Databases[$database_name]
 
 $result = $db.ExecuteWithResults("SELECT * FROM ...")
 
